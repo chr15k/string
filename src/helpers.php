@@ -1,6 +1,6 @@
 <?php
 
-use StringHelpers\Str;
+use ChrisTelKel\Str;
 
 if (! function_exists('str_plural')) {
 
@@ -34,7 +34,7 @@ if (! function_exists('str_slug')) {
     }
 }
 
-if (! function_exists('studly_case')) {
+if (! function_exists('str_studly')) {
 
     function studly_case($value)
     {
@@ -42,7 +42,7 @@ if (! function_exists('studly_case')) {
     }
 }
 
-if (! function_exists('camel_case')) {
+if (! function_exists('str_camel')) {
 
     function camel_case($value)
     {
@@ -50,7 +50,7 @@ if (! function_exists('camel_case')) {
     }
 }
 
-if (! function_exists('snake_case')) {
+if (! function_exists('str_snake')) {
 
     function snake_case($value, $delimiter = '_')
     {

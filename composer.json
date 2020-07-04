@@ -1,11 +1,11 @@
 {
-    "name": "ctk85/grammar",
+    "name": "christelkel/string",
     "description": "String helpers package",
     "type": "library",
     "authors": [
         {
             "name": "Chris",
-            "email": "ctk8501@gmail.com"
+            "email": "christhecoder85@gmail.com"
         }
     ],
     "require": {
@@ -14,13 +14,21 @@
     },
     "autoload": {
         "psr-4": {
-            "StringHelpers\\": "src/"
+            "ChrisTelKel\\Str\\": "src/"
         },
         "files": [
             "src/helpers.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "ChrisTelKel\\Str\\Test\\": "tests"
+        }
+    },
     "config": {
         "sort-packages": true
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.2"
     }
 }

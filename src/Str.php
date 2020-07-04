@@ -1,6 +1,6 @@
 <?php
 
-namespace StringHelpers;
+namespace ChrisTelKel;
 
 class Str
 {

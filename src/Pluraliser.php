@@ -1,6 +1,6 @@
 <?php
 
-namespace StringHelpers;
+namespace ChrisTelKel;
 
 use Doctrine\Common\Inflector\Inflector;
 
