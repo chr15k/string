@@ -1,0 +1,26 @@
+{
+    "name": "ctk85/grammar",
+    "description": "String helpers package",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Chris",
+            "email": "ctk8501@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "doctrine/inflector": "~1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "StringHelpers\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
