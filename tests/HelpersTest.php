@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class HelpersTest extends TestCase
 {
-public function testStringCanBeLimitedByWords()
+	public function testStringCanBeLimitedByWords()
     {
         $this->assertSame('Chris...', Str::words('Chris Tel Kel', 1));
         $this->assertSame('Chris___', Str::words('Chris Tel Kel', 1, '___'));
