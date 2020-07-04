@@ -1,10 +1,10 @@
 {
-    "name": "christelkel/string",
+    "name": "chr15k/string",
     "description": "String helpers package",
     "type": "library",
     "authors": [
         {
-            "name": "Chris",
+            "name": "Chris Keller",
             "email": "christhecoder85@gmail.com"
         }
     ],
