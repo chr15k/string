@@ -1,4 +1,11 @@
-# String helpers
+# String helpers for your PHP project
+
+## Install
+You can install this package via composer:
+
+```bash
+composer require chr15k/string
+```
 
 ## Usage
 
