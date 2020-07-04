@@ -1,6 +1,6 @@
 <?php
 
-namespace ChrisTelKel;
+namespace ChrisTelKel\String;
 
 class Str
 {

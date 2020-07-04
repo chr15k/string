@@ -1,6 +1,6 @@
 <?php
 
-use ChrisTelKel\Str;
+use ChrisTelKel\String\Str;
 
 if (! function_exists('str_plural')) {
 
