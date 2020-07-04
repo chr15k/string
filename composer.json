@@ -10,7 +10,9 @@
     ],
     "require": {
         "php": "^7.1",
-        "doctrine/inflector": "~1.1"
+        "doctrine/inflector": "~1.1",
+        "ramsey/uuid": "^4.0",
+        "voku/portable-ascii": "^1.5"
     },
     "autoload": {
         "psr-4": {
