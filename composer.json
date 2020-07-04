@@ -2,6 +2,12 @@
     "name": "chr15k/string",
     "description": "String helpers package",
     "type": "library",
+    "keywords": [
+        "chr15k",
+        "string"
+    ],
+    "homepage": "https://github.com/chr15k/string",
+    "license": "MIT",
     "authors": [
         {
             "name": "Chris Keller",
@@ -13,6 +19,9 @@
         "doctrine/inflector": "~1.1",
         "ramsey/uuid": "^4.0",
         "voku/portable-ascii": "^1.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.2"
     },
     "autoload": {
         "psr-4": {
@@ -30,7 +39,6 @@
     "config": {
         "sort-packages": true
     },
-    "require-dev": {
-        "phpunit/phpunit": "^9.2"
-    }
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
