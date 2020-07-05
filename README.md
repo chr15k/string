@@ -147,7 +147,7 @@ $matches = str_match('baz*', 'foobar');
 `str_ordered_uuid()`
 The str_ordered_uuid() method generates a "timestamp first" UUID that may be efficiently stored in an indexed database column.
 ```php
-$orderedUuid = (string) str_ordered_uuid();
+$orderedUuid = str_ordered_uuid();
 
 // 90f81d6c-b4f6-4b03-a82d-800058a21705
 ```
@@ -292,7 +292,9 @@ $string = str_upper('chris');
 
 `str_uuid()`
 ```php
-return (string) str_uuid();
+$uuid = str_uuid();
+
+// 0b1a9d6f-e2c7-489d-93f9-331108ebc314
 ```
 
 `str_words()`

@@ -240,11 +240,11 @@ if (! function_exists('str_ordered_uuid')) {
     /**
      * Generate a time-ordered UUID (version 4).
      *
-     * @return \Ramsey\Uuid\UuidInterface
+     * @return string
      */
     function str_ordered_uuid()
     {
-        return Str::orderedUuid();
+        return (string) Str::orderedUuid();
     }
 }
 
@@ -446,11 +446,11 @@ if (! function_exists('str_uuid')) {
     /**
      * Generate a UUID (version 4).
      *
-     * @return \Ramsey\Uuid\UuidInterface
+     * @return string
      */
     function str_uuid()
     {
-        return Str::uuid();
+        return (string) Str::uuid();
     }
 }
 
