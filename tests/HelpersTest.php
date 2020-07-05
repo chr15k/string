@@ -8,6 +8,15 @@ use PHPUnit\Framework\TestCase;
 
 class HelpersTest extends TestCase
 {
+    public function testStringPossessive()
+    {
+        $this->assertSame("Chris'", Str::possessive('Chris'));
+        $this->assertSame("David's", Str::possessive('David'));
+        $this->assertSame("its", Str::possessive('it'));
+        $this->assertSame("Erin's", Str::possessive('Erin'));
+        $this->assertSame("James'", Str::possessive('James'));
+    }
+
 	public function testStringCanBeLimitedByWords()
     {
         $this->assertSame('Chris...', Str::words('Chris Tel Kel', 1));

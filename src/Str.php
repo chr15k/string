@@ -388,6 +388,32 @@ class Str
     }
 
     /**
+     * Get the possessive version of a string.
+     *
+     * @return string
+     */
+    public static function possessive(string $value = '')
+    {
+        if (empty($value)) {
+            return $value;
+        }
+
+        $value = trim($value);
+
+        $edgeCases = ['it'];
+
+        if (in_array($value, $edgeCases)) {
+            return sprintf("%s%s", $value, 's');
+        }
+
+        return sprintf(
+            "%s'%s",
+            $value,
+            ($value[strlen($value) - 1] !== 's' ? 's' : '')
+        );
+    }
+
+    /**
      * Generate a random alpha-numeric string.
      *
      * @param  int    $length

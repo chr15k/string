@@ -126,6 +126,13 @@ $truncated = str_limit('The quick brown fox jumps over the lazy dog', 20);
 // The quick brown fox...
 ```
 
+`str_lower()`
+```php
+$lower = str_lower('CHRIS');
+
+// chris
+```
+
 `str_match()`
 ```php
 $matches = str_match('foo*', 'foobar');
@@ -135,6 +142,14 @@ $matches = str_match('foo*', 'foobar');
 $matches = str_match('baz*', 'foobar');
 
 // false
+```
+
+`str_ordered_uuid()`
+The str_ordered_uuid() method generates a "timestamp first" UUID that may be efficiently stored in an indexed database column.
+```php
+$orderedUuid = (string) str_ordered_uuid();
+
+// 90f81d6c-b4f6-4b03-a82d-800058a21705
 ```
 
 `str_plural()`
@@ -157,6 +172,21 @@ $plural = str_plural('child', 2);
 $plural = str_plural('child', 1);
 
 // child
+```
+
+`str_possessive()`
+```php
+$possessive = str_possessive('Chris');
+
+// Chris'
+
+$possessive = str_possessive('David');
+
+// David's
+
+$possessive = str_possessive('it');
+
+// its
 ```
 
 `str_random()`

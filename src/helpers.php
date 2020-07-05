@@ -180,20 +180,6 @@ if (! function_exists('str_finish')) {
     }
 }
 
-if (! function_exists('str_match')) {
-    /**
-     * Determine if a given string matches a given pattern.
-     *
-     * @param  string|array  $pattern
-     * @param  string  $value
-     * @return bool
-     */
-    function str_match($pattern, $value)
-    {
-        return Str::match($pattern, $value);
-    }
-}
-
 if (! function_exists('str_length')) {
     /**
      * Return the length of the given string.
@@ -236,6 +222,32 @@ if (! function_exists('str_lower')) {
     }
 }
 
+if (! function_exists('str_match')) {
+    /**
+     * Determine if a given string matches a given pattern.
+     *
+     * @param  string|array  $pattern
+     * @param  string  $value
+     * @return bool
+     */
+    function str_match($pattern, $value)
+    {
+        return Str::match($pattern, $value);
+    }
+}
+
+if (! function_exists('str_ordered_uuid')) {
+    /**
+     * Generate a time-ordered UUID (version 4).
+     *
+     * @return \Ramsey\Uuid\UuidInterface
+     */
+    function str_ordered_uuid()
+    {
+        return Str::orderedUuid();
+    }
+}
+
 if (! function_exists('str_plural')) {
     /**
      * Get the plural form of an English word.
@@ -249,6 +261,19 @@ if (! function_exists('str_plural')) {
         return Str::plural($value, $count);
     }
 }
+
+if (! function_exists('str_possessive')) {
+    /**
+     * Get the possessive version of a string.
+     *
+     * @return string
+     */
+    function str_possessive($value = '')
+    {
+        return Str::possessive($value);
+    }
+}
+
 
 if (! function_exists('str_random')) {
     /**
