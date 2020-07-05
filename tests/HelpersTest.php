@@ -176,20 +176,20 @@ class HelpersTest extends TestCase
 
     public function testStrContains()
     {
-        $this->assertTrue(Str::contains('taylor', 'ylo'));
-        $this->assertTrue(Str::contains('taylor', 'taylor'));
-        $this->assertTrue(Str::contains('taylor', ['ylo']));
-        $this->assertTrue(Str::contains('taylor', ['xxx', 'ylo']));
-        $this->assertFalse(Str::contains('taylor', 'xxx'));
-        $this->assertFalse(Str::contains('taylor', ['xxx']));
-        $this->assertFalse(Str::contains('taylor', ''));
+        $this->assertTrue(Str::contains('chris', 'ris'));
+        $this->assertTrue(Str::contains('chris', 'chris'));
+        $this->assertTrue(Str::contains('chris', ['chr']));
+        $this->assertTrue(Str::contains('chris', ['xxx', 'hri']));
+        $this->assertFalse(Str::contains('chris', 'xxx'));
+        $this->assertFalse(Str::contains('chris', ['xxx']));
+        $this->assertFalse(Str::contains('chris', ''));
     }
 
     public function testStrContainsAll()
     {
-        $this->assertTrue(Str::containsAll('taylor otwell', ['taylor', 'otwell']));
-        $this->assertTrue(Str::containsAll('taylor otwell', ['taylor']));
-        $this->assertFalse(Str::containsAll('taylor otwell', ['taylor', 'xxx']));
+        $this->assertTrue(Str::containsAll('chris keller', ['chris', 'keller']));
+        $this->assertTrue(Str::containsAll('chris keller', ['chris']));
+        $this->assertFalse(Str::containsAll('chris keller', ['chris', 'xxx']));
     }
 
     public function testSlug()
