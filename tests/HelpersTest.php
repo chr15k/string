@@ -268,7 +268,7 @@ class HelpersTest extends TestCase
 
     public function testKebab()
     {
-        $this->assertSame('chris-tel-kel', Str::kebab('Chr15k'));
+        $this->assertSame('chris-tel-kel', Str::kebab('ChrisTelKel'));
     }
 
     public function testLower()
