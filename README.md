@@ -1,6 +1,6 @@
 # String helpers for your PHP project
 
-[![Latest Stable Version](https://poser.pugx.org/phpunit/phpunit/v)](//packagist.org/packages/phpunit/phpunit) [![Total Downloads](https://poser.pugx.org/phpunit/phpunit/downloads)](//packagist.org/packages/phpunit/phpunit) [![Latest Unstable Version](https://poser.pugx.org/phpunit/phpunit/v/unstable)](//packagist.org/packages/phpunit/phpunit) [![License](https://poser.pugx.org/phpunit/phpunit/license)](//packagist.org/packages/phpunit/phpunit)
+[![Latest Stable Version](https://poser.pugx.org/chr15k/string/v)](//packagist.org/packages/chr15k/string)[![Latest Unstable Version](https://poser.pugx.org/chr15k/string/v/unstable)](//packagist.org/packages/chr15k/string)[![Total Downloads](https://poser.pugx.org/chr15k/string/downloads)](//packagist.org/packages/chr15k/string)[![License](https://poser.pugx.org/chr15k/string/license)](//packagist.org/packages/chr15k/string)
 
 This package provides useful helpers for working with strings in PHP.
 
