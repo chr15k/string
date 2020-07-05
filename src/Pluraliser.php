@@ -1,6 +1,6 @@
 <?php
 
-namespace ChrisTelKel\String;
+namespace Chr15k\String;
 
 use Doctrine\Inflector\CachedWordInflector;
 use Doctrine\Inflector\Inflector;

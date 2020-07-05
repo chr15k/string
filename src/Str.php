@@ -1,6 +1,6 @@
 <?php
 
-namespace ChrisTelKel\String;
+namespace Chr15k\String;
 
 use voku\helper\ASCII;
 use Ramsey\Uuid\Codec\TimestampFirstCombCodec;

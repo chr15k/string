@@ -1,8 +1,8 @@
 <?php
 
-namespace ChrisTelKel\String\Test;
+namespace Chr15k\String\Test;
 
-use ChrisTelKel\String\Str;
+use Chr15k\String\Str;
 use Ramsey\Uuid\UuidInterface;
 use PHPUnit\Framework\TestCase;
 
@@ -268,7 +268,7 @@ class HelpersTest extends TestCase
 
     public function testKebab()
     {
-        $this->assertSame('chris-tel-kel', Str::kebab('ChrisTelKel'));
+        $this->assertSame('chris-tel-kel', Str::kebab('Chr15k'));
     }
 
     public function testLower()

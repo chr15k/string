@@ -1,6 +1,6 @@
 <?php
 
-use ChrisTelKel\String\Str;
+use Chr15k\String\Str;
 
 if (! function_exists('str_after')) {
     /**
