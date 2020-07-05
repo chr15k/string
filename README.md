@@ -1,5 +1,19 @@
 # String helpers for your PHP project
 
+[![Latest Stable Version](https://poser.pugx.org/phpunit/phpunit/v)](//packagist.org/packages/phpunit/phpunit) [![Total Downloads](https://poser.pugx.org/phpunit/phpunit/downloads)](//packagist.org/packages/phpunit/phpunit) [![Latest Unstable Version](https://poser.pugx.org/phpunit/phpunit/v/unstable)](//packagist.org/packages/phpunit/phpunit) [![License](https://poser.pugx.org/phpunit/phpunit/license)](//packagist.org/packages/phpunit/phpunit)
+
+This package provides useful helpers for working with strings in PHP.
+
+This library has 3 dependencies:
+
+- [doctrine/inflector](https://github.com/doctrine/inflector) (Plural/Singular word support)
+- [ramsey/uuid](https://github.com/ramsey/uuid) (UUID generation support)
+- [voku/portable-ascii](https://github.com/voku/portable-ascii) (ASCII support)
+
+Based on ...
+
+- Laravel's string helper work (https://github.com/laravel/framework)
+
 ## Install
 You can install this package via composer:
 
@@ -257,3 +271,13 @@ return str_words('Perfectly balanced, as all things should be.', 3, ' >>>');
 
 // Perfectly balanced, as >>>
 ```
+
+## Testing
+You can run the tests with:
+
+```
+vendor/bin/phpunit
+```
+
+## License
+The MIT License (MIT). Please see [License File](https://github.com/chr15k/string/blob/master/LICENSE.md) for more information.
