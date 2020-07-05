@@ -23,56 +23,90 @@ composer require chr15k/string
 
 ## Usage
 
-`str_after()`
+[after](#after)
+[after_last](#after_last)
+[before](#before)
+[camel](#camel)
+[contains](#contains)
+[contains_all](#contains_all)
+[ends_with](#ends_with)
+[finish](#finish)
+[is_ascii](#is_ascii)
+[is_uuid](#is_uuid)
+[kebab](#kebab)
+[length](#length)
+[limit](#limit)
+[lower](#lower)
+[match](#match)
+[ordered_uuid](#ordered_uuid)
+[plural](#plural)
+[possessive](#possessive)
+[random](#random)
+[replace_array](#replace_array)
+[replace_first](#replace_first)
+[replace_last](#replace_last)
+[singular](#singular)
+[slug](#slug)
+[snake](#snake)
+[start](#start)
+[starts_with](#starts_with)
+[studly](#studly)
+[title](#title)
+[ucfirst](#ucfirst)
+[upper](#upper)
+[uuid](#uuid)
+[words](#words)
+
+### <a id="after"></a>str_after()
 ```php
 $slice = str_after('This is my name', 'This is');
 
 // ' my name'
 ```
 
-`str_after_last()`
+### <a id="after_last"></a>str_after_last()
 ```php
 $slice = str_after_last('App\Controllers\Controller', '\\');
 
 // 'Controller'
 ```
 
-`str_before()`
+### <a id="before"></a>str_before()
 ```php
 $slice = str_before('This is my name', 'my name');
 
 // 'This is '
 ```
 
-`str_camel()`
+### <a id="camel"></a>str_camel()
 ```php
 $converted = str_camel('foo_bar')
 
 // fooBar
 ```
 
-`str_contains()`
+### <a id="contains"></a>str_contains()
 ```php
 $contains = str_contains('This is my name', 'my');
 
 // true
 ```
 
-`str_contains_all()`
+### <a id="contains_all"></a>str_contains_all()
 ```php
 $containsAll = str_contains_all('This is my name', ['my', 'name']);
 
 // true
 ```
 
-`str_ends_with()`
+### <a id="ends_with"></a>str_ends_with()
 ```php
 $result = str_ends_with('This is my name', 'name');
 
 // true
 ```
 
-`str_finish()`
+### <a id="finish"></a>str_finish()
 ```php
 $adjusted = str_finish('this/string', '/');
 
@@ -83,7 +117,7 @@ $adjusted = str_finish('this/string/', '/');
 // this/string/
 ```
 
-`str_is_ascii()`
+### <a id="is_ascii"></a>str_is_ascii()
 ```php
 $isAscii = str_is_ascii('Chris');
 
@@ -94,7 +128,7 @@ $isAscii = str_is_ascii('ü');
 // false
 ```
 
-`str_is_uuid()`
+### <a id="is_uuid"></a>str_is_uuid()
 ```php
 $isUuid = str_is_uuid('a0a2a2d2-0b87-4a18-83f2-2529882be2de');
 
@@ -105,35 +139,35 @@ $isUuid = str_is_uuid('chris');
 // false
 ```
 
-`str_kebab()`
+### <a id="kebab"></a>str_kebab()
 ```php
 $converted = str_kebab('fooBar');
 
 // foo-bar
 ```
 
-`str_length()`
+### <a id="length"></a>str_length()
 ```php
 $length = str_length('Chris');
 
 // 5
 ```
 
-`str_limit()`
+### <a id="limit"></a>str_limit()
 ```php
 $truncated = str_limit('The quick brown fox jumps over the lazy dog', 20);
 
 // The quick brown fox...
 ```
 
-`str_lower()`
+### <a id="lower"></a>str_lower()
 ```php
 $lower = str_lower('CHRIS');
 
 // chris
 ```
 
-`str_match()`
+### <a id="match"></a>str_match()
 ```php
 $matches = str_match('foo*', 'foobar');
 
@@ -144,7 +178,7 @@ $matches = str_match('baz*', 'foobar');
 // false
 ```
 
-`str_ordered_uuid()`
+### <a id="ordered_uuid"></a>str_ordered_uuid()
 The str_ordered_uuid() method generates a "timestamp first" UUID that may be efficiently stored in an indexed database column.
 ```php
 $orderedUuid = str_ordered_uuid();
@@ -152,7 +186,7 @@ $orderedUuid = str_ordered_uuid();
 // 90f81d6c-b4f6-4b03-a82d-800058a21705
 ```
 
-`str_plural()`
+### <a id="plural"></a>str_plural()
 ```php
 $plural = str_plural('bus');
 
@@ -174,7 +208,7 @@ $plural = str_plural('child', 1);
 // child
 ```
 
-`str_possessive()`
+### <a id="possessive"></a>str_possessive()
 ```php
 $possessive = str_possessive('Chris');
 
@@ -189,14 +223,14 @@ $possessive = str_possessive('it');
 // its
 ```
 
-`str_random()`
+### <a id="random"></a>str_random()
 ```php
 $random = str_random(40);
 
 // odkX5tWGo3tb8hlNgdoVPjHxZR8xRzii1uFT1cxa
 ```
 
-`str_replace_array()`
+### <a id="replace_array"></a>str_replace_array()
 ```php
 $string = 'The event will take place between ? and ?';
 
@@ -205,21 +239,21 @@ $replaced = str_replace_array('?', ['8:30', '9:00'], $string);
 // The event will take place between 8:30 and 9:00
 ```
 
-`str_replace_first()`
+### <a id="replace_first"></a>str_replace_first()
 ```php
 $replaced = str_replace_first('the', 'a', 'the quick brown fox jumps over the lazy dog');
 
 // a quick brown fox jumps over the lazy dog
 ```
 
-`str_replace_last()`
+### <a id="replace_last"></a>str_replace_last()
 ```php
 $replaced = str_replace_last('the', 'a', 'the quick brown fox jumps over the lazy dog');
 
 // the quick brown fox jumps over a lazy dog
 ```
 
-`str_singular()`
+### <a id="singular"></a>str_singular()
 ```php
 $singular = str_singular('cars');
 
@@ -230,21 +264,21 @@ $singular = str_singular('children');
 // child
 ```
 
-`str_slug()`
+### <a id="slug"></a>str_slug()
 ```php
 $slug = str_slug('Chris The Coder', '-');
 
 // chris-the-coder
 ```
 
-`str_snake()`
+### <a id="snake"></a>str_snake()
 ```php
 $converted = str_snake('fooBar');
 
 // foo_bar
 ```
 
-`str_start()`
+### <a id="start"></a>str_start()
 ```php
 $adjusted = str_start('this/string', '/');
 
@@ -255,49 +289,49 @@ $adjusted = str_start('/this/string', '/');
 // /this/string
 ```
 
-`str_starts_with()`
+### <a id="starts_with"></a>str_starts_with()
 ```php
 $result = str_starts_with('This is my name', 'This');
 
 // true
 ```
 
-`str_studly()`
+### <a id="studly"></a>str_studly()
 ```php
 $converted = str_studly('foo_bar');
 
 // FooBar
 ```
 
-`str_title()`
+### <a id="title"></a>str_title()
 ```php
 $converted = str_title('a nice title uses the correct case');
 
 // A Nice Title Uses The Correct Case
 ```
 
-`str_ucfirst()`
+### <a id="ucfirst"></a>str_ucfirst()
 ```php
 $string = str_ucfirst('foo bar');
 
 // Foo bar
 ```
 
-`str_upper()`
+### <a id="upper"></a>str_upper()
 ```php
 $string = str_upper('chris');
 
 // CHRIS
 ```
 
-`str_uuid()`
+### <a id="uuid"></a>str_uuid()
 ```php
 $uuid = str_uuid();
 
 // 0b1a9d6f-e2c7-489d-93f9-331108ebc314
 ```
 
-`str_words()`
+### <a id="words"></a>str_words()
 ```php
 return str_words('Perfectly balanced, as all things should be.', 3, ' >>>');
 
