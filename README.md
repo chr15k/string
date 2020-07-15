@@ -343,9 +343,10 @@ return Str::words('Perfectly balanced, as all things should be.', 3, ' >>>');
 
 <details>
   <summary>String Method Chaining</summary>
- 
+<p></p>
+
 ```
-Chain multiple string operations together using the `s()` helper.</p>
+Chain multiple string operations together using the s() helper.
 ```
  
 - [after](#after2)
