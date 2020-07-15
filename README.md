@@ -22,324 +22,44 @@ composer require chr15k/string
 ```
 
 ## Usage
-<details>
-  <summary>String Methods</summary>
-
-- [after](#after)
-- [afterLast](#afterLast)
-- [before](#before)
-- [camel](#camel)
-- [contains](#contains)
-- [containsAll](#containsAll)
-- [endsWith](#endsWith)
-- [finish](#finish)
-- [isAscii](#isAscii)
-- [isUuid](#isUuid)
-- [kebab](#kebab)
-- [length](#length)
-- [limit](#limit)
-- [lower](#lower)
-- [match](#match)
-- [orderedUuid](#orderedUuid)
-- [plural](#plural)
-- [possessive](#possessive)
-- [random](#random)
-- [replaceArray](#replaceArray)
-- [replaceFirst](#replaceFirst)
-- [replaceLast](#replaceLast)
-- [singular](#singular)
-- [slug](#slug)
-- [snake](#snake)
-- [start](#start)
-- [startsWith](#startsWith)
-- [studly](#studly)
-- [title](#title)
-- [ucfirst](#ucfirst)
-- [upper](#upper)
-- [uuid](#uuid)
-- [words](#words)
-
-### <a id="after"></a>Str::after()
 ```php
-$slice = Str::after('This is my name', 'This is');
+echo s('Chris')->upper();
+// outputs: "CHRIS"
 
-// ' my name'
+echo s('Chris')->lower();
+// outputs: "chris"
+
+echo s('Chris')->possessive();
+// outputs: "Chris'"
+
+echo s('Chris')->exactly('Chris');
+// outputs: true
+
+echo s('Chris')->isEmtpy();
+// outputs: false
+
+echo s(' ')->trim()->isEmpty();
+// outputs: true
+
+echo s('Child')
+    ->plural()
+    ->possessive()
+    ->append(' Book');
+// outputs: "Children's Book"
+
+echo s(' hello_world')
+    ->trim()
+    ->camel();
+// outputs: "helloWorld"
+
+echo s('Hello World')->studly();
+// outputs: "HelloWorld"
+
+echo s('Hello World')->slug('-');
+// outputs: "hello-world"
 ```
 
-### <a id="afterLast"></a>Str::afterLast()
-```php
-$slice = Str::afterLast('App\Controllers\Controller', '\\');
-
-// 'Controller'
-```
-
-### <a id="before"></a>Str::before()
-```php
-$slice = Str::before('This is my name', 'my name');
-
-// 'This is '
-```
-
-### <a id="camel"></a>Str::camel()
-```php
-$converted = Str::camel('foo_bar')
-
-// fooBar
-```
-
-### <a id="contains"></a>Str::contains()
-```php
-$contains = Str::contains('This is my name', 'my');
-
-// true
-```
-
-### <a id="containsAll"></a>Str::containsAll()
-```php
-$containsAll = Str::containsAll('This is my name', ['my', 'name']);
-
-// true
-```
-
-### <a id="endsWith"></a>Str::endsWith()
-```php
-$result = Str::endsWith('This is my name', 'name');
-
-// true
-```
-
-### <a id="finish"></a>Str::finish()
-```php
-$adjusted = Str::finish('this/string', '/');
-
-// this/string/
-
-$adjusted = Str::finish('this/string/', '/');
-
-// this/string/
-```
-
-### <a id="isAscii"></a>Str::isAscii()
-```php
-$isAscii = Str::isAscii('Chris');
-
-// true
-
-$isAscii = Str::isAscii('ü');
-
-// false
-```
-
-### <a id="isUuid"></a>Str::isUuid()
-```php
-$isUuid = Str::isUuid('a0a2a2d2-0b87-4a18-83f2-2529882be2de');
-
-// true
-
-$isUuid = Str::isUuid('chris');
-
-// false
-```
-
-### <a id="kebab"></a>Str::kebab()
-```php
-$converted = Str::kebab('fooBar');
-
-// foo-bar
-```
-
-### <a id="length"></a>Str::length()
-```php
-$length = Str::length('Chris');
-
-// 5
-```
-
-### <a id="limit"></a>Str::limit()
-```php
-$truncated = Str::limit('The quick brown fox jumps over the lazy dog', 20);
-
-// The quick brown fox...
-```
-
-### <a id="lower"></a>Str::lower()
-```php
-$lower = Str::lower('CHRIS');
-
-// chris
-```
-
-### <a id="match"></a>Str::match()
-```php
-$matches = Str::match('foo*', 'foobar');
-
-// true
-
-$matches = Str::match('baz*', 'foobar');
-
-// false
-```
-
-### <a id="orderedUuid"></a>Str::orderedUuid()
-The Str::orderedUuid() method generates a "timestamp first" UUID that may be efficiently stored in an indexed database column.
-```php
-$orderedUuid = Str::orderedUuid();
-
-// 90f81d6c-b4f6-4b03-a82d-800058a21705
-```
-
-### <a id="plural"></a>Str::plural()
-```php
-$plural = Str::plural('bus');
-
-// buses
-
-$plural = Str::plural('child');
-
-// children
-
-
-// Pass second argument to retrieve the singular or plural form of the string...
-
-$plural = Str::plural('child', 2);
-
-// children
-
-$plural = Str::plural('child', 1);
-
-// child
-```
-
-### <a id="possessive"></a>Str::possessive()
-```php
-$possessive = Str::possessive('Chris');
-
-// Chris'
-
-$possessive = Str::possessive('David');
-
-// David's
-
-$possessive = Str::possessive('it');
-
-// its
-```
-
-### <a id="random"></a>Str::random()
-```php
-$random = Str::random(40);
-
-// odkX5tWGo3tb8hlNgdoVPjHxZR8xRzii1uFT1cxa
-```
-
-### <a id="replaceArray"></a>Str::replaceArray()
-```php
-$string = 'The event will take place between ? and ?';
-
-$replaced = Str::replaceArray('?', ['8:30', '9:00'], $string);
-
-// The event will take place between 8:30 and 9:00
-```
-
-### <a id="replaceFirst"></a>Str::replaceFirst()
-```php
-$replaced = Str::replaceFirst('the', 'a', 'the quick brown fox jumps over the lazy dog');
-
-// a quick brown fox jumps over the lazy dog
-```
-
-### <a id="replaceLast"></a>Str::replaceLast()
-```php
-$replaced = Str::replaceLast('the', 'a', 'the quick brown fox jumps over the lazy dog');
-
-// the quick brown fox jumps over a lazy dog
-```
-
-### <a id="singular"></a>Str::singular()
-```php
-$singular = Str::singular('cars');
-
-// car
-
-$singular = Str::singular('children');
-
-// child
-```
-
-### <a id="slug"></a>Str::slug()
-```php
-$slug = Str::slug('Chris The Coder', '-');
-
-// chris-the-coder
-```
-
-### <a id="snake"></a>Str::snake()
-```php
-$converted = Str::snake('fooBar');
-
-// foo_bar
-```
-
-### <a id="start"></a>Str::start()
-```php
-$adjusted = Str::start('this/string', '/');
-
-// /this/string
-
-$adjusted = Str::start('/this/string', '/');
-
-// /this/string
-```
-
-### <a id="startsWith"></a>Str::startsWith()
-```php
-$result = Str::startsWith('This is my name', 'This');
-
-// true
-```
-
-### <a id="studly"></a>Str::studly()
-```php
-$converted = Str::studly('foo_bar');
-
-// FooBar
-```
-
-### <a id="title"></a>Str::title()
-```php
-$converted = Str::title('a nice title uses the correct case');
-
-// A Nice Title Uses The Correct Case
-```
-
-### <a id="ucfirst"></a>Str::ucfirst()
-```php
-$string = Str::ucfirst('foo bar');
-
-// Foo bar
-```
-
-### <a id="upper"></a>Str::upper()
-```php
-$string = Str::upper('chris');
-
-// CHRIS
-```
-
-### <a id="uuid"></a>Str::uuid()
-```php
-$uuid = Str::uuid();
-
-// 0b1a9d6f-e2c7-489d-93f9-331108ebc314
-```
-
-### <a id="words"></a>Str::words()
-```php
-return Str::words('Perfectly balanced, as all things should be.', 3, ' >>>');
-
-// Perfectly balanced, as >>>
-```
-</details>
+## Docs
 
 <details>
   <summary>String Method Chaining</summary>
@@ -822,6 +542,326 @@ $string = s('  ')->whenEmpty(function ($string) {
 ### <a id="words2"></a>words
 ```php
 $string = s('Perfectly balanced, as all things should be.')->words(3, ' >>>');
+
+// Perfectly balanced, as >>>
+```
+</details>
+
+<details>
+  <summary>String Methods</summary>
+    <p></p>
+
+- [after](#after)
+- [afterLast](#afterLast)
+- [before](#before)
+- [camel](#camel)
+- [contains](#contains)
+- [containsAll](#containsAll)
+- [endsWith](#endsWith)
+- [finish](#finish)
+- [isAscii](#isAscii)
+- [isUuid](#isUuid)
+- [kebab](#kebab)
+- [length](#length)
+- [limit](#limit)
+- [lower](#lower)
+- [match](#match)
+- [orderedUuid](#orderedUuid)
+- [plural](#plural)
+- [possessive](#possessive)
+- [random](#random)
+- [replaceArray](#replaceArray)
+- [replaceFirst](#replaceFirst)
+- [replaceLast](#replaceLast)
+- [singular](#singular)
+- [slug](#slug)
+- [snake](#snake)
+- [start](#start)
+- [startsWith](#startsWith)
+- [studly](#studly)
+- [title](#title)
+- [ucfirst](#ucfirst)
+- [upper](#upper)
+- [uuid](#uuid)
+- [words](#words)
+
+### <a id="after"></a>Str::after()
+```php
+$slice = Str::after('This is my name', 'This is');
+
+// ' my name'
+```
+
+### <a id="afterLast"></a>Str::afterLast()
+```php
+$slice = Str::afterLast('App\Controllers\Controller', '\\');
+
+// 'Controller'
+```
+
+### <a id="before"></a>Str::before()
+```php
+$slice = Str::before('This is my name', 'my name');
+
+// 'This is '
+```
+
+### <a id="camel"></a>Str::camel()
+```php
+$converted = Str::camel('foo_bar')
+
+// fooBar
+```
+
+### <a id="contains"></a>Str::contains()
+```php
+$contains = Str::contains('This is my name', 'my');
+
+// true
+```
+
+### <a id="containsAll"></a>Str::containsAll()
+```php
+$containsAll = Str::containsAll('This is my name', ['my', 'name']);
+
+// true
+```
+
+### <a id="endsWith"></a>Str::endsWith()
+```php
+$result = Str::endsWith('This is my name', 'name');
+
+// true
+```
+
+### <a id="finish"></a>Str::finish()
+```php
+$adjusted = Str::finish('this/string', '/');
+
+// this/string/
+
+$adjusted = Str::finish('this/string/', '/');
+
+// this/string/
+```
+
+### <a id="isAscii"></a>Str::isAscii()
+```php
+$isAscii = Str::isAscii('Chris');
+
+// true
+
+$isAscii = Str::isAscii('ü');
+
+// false
+```
+
+### <a id="isUuid"></a>Str::isUuid()
+```php
+$isUuid = Str::isUuid('a0a2a2d2-0b87-4a18-83f2-2529882be2de');
+
+// true
+
+$isUuid = Str::isUuid('chris');
+
+// false
+```
+
+### <a id="kebab"></a>Str::kebab()
+```php
+$converted = Str::kebab('fooBar');
+
+// foo-bar
+```
+
+### <a id="length"></a>Str::length()
+```php
+$length = Str::length('Chris');
+
+// 5
+```
+
+### <a id="limit"></a>Str::limit()
+```php
+$truncated = Str::limit('The quick brown fox jumps over the lazy dog', 20);
+
+// The quick brown fox...
+```
+
+### <a id="lower"></a>Str::lower()
+```php
+$lower = Str::lower('CHRIS');
+
+// chris
+```
+
+### <a id="match"></a>Str::match()
+```php
+$matches = Str::match('foo*', 'foobar');
+
+// true
+
+$matches = Str::match('baz*', 'foobar');
+
+// false
+```
+
+### <a id="orderedUuid"></a>Str::orderedUuid()
+The Str::orderedUuid() method generates a "timestamp first" UUID that may be efficiently stored in an indexed database column.
+```php
+$orderedUuid = Str::orderedUuid();
+
+// 90f81d6c-b4f6-4b03-a82d-800058a21705
+```
+
+### <a id="plural"></a>Str::plural()
+```php
+$plural = Str::plural('bus');
+
+// buses
+
+$plural = Str::plural('child');
+
+// children
+
+
+// Pass second argument to retrieve the singular or plural form of the string...
+
+$plural = Str::plural('child', 2);
+
+// children
+
+$plural = Str::plural('child', 1);
+
+// child
+```
+
+### <a id="possessive"></a>Str::possessive()
+```php
+$possessive = Str::possessive('Chris');
+
+// Chris'
+
+$possessive = Str::possessive('David');
+
+// David's
+
+$possessive = Str::possessive('it');
+
+// its
+```
+
+### <a id="random"></a>Str::random()
+```php
+$random = Str::random(40);
+
+// odkX5tWGo3tb8hlNgdoVPjHxZR8xRzii1uFT1cxa
+```
+
+### <a id="replaceArray"></a>Str::replaceArray()
+```php
+$string = 'The event will take place between ? and ?';
+
+$replaced = Str::replaceArray('?', ['8:30', '9:00'], $string);
+
+// The event will take place between 8:30 and 9:00
+```
+
+### <a id="replaceFirst"></a>Str::replaceFirst()
+```php
+$replaced = Str::replaceFirst('the', 'a', 'the quick brown fox jumps over the lazy dog');
+
+// a quick brown fox jumps over the lazy dog
+```
+
+### <a id="replaceLast"></a>Str::replaceLast()
+```php
+$replaced = Str::replaceLast('the', 'a', 'the quick brown fox jumps over the lazy dog');
+
+// the quick brown fox jumps over a lazy dog
+```
+
+### <a id="singular"></a>Str::singular()
+```php
+$singular = Str::singular('cars');
+
+// car
+
+$singular = Str::singular('children');
+
+// child
+```
+
+### <a id="slug"></a>Str::slug()
+```php
+$slug = Str::slug('Chris The Coder', '-');
+
+// chris-the-coder
+```
+
+### <a id="snake"></a>Str::snake()
+```php
+$converted = Str::snake('fooBar');
+
+// foo_bar
+```
+
+### <a id="start"></a>Str::start()
+```php
+$adjusted = Str::start('this/string', '/');
+
+// /this/string
+
+$adjusted = Str::start('/this/string', '/');
+
+// /this/string
+```
+
+### <a id="startsWith"></a>Str::startsWith()
+```php
+$result = Str::startsWith('This is my name', 'This');
+
+// true
+```
+
+### <a id="studly"></a>Str::studly()
+```php
+$converted = Str::studly('foo_bar');
+
+// FooBar
+```
+
+### <a id="title"></a>Str::title()
+```php
+$converted = Str::title('a nice title uses the correct case');
+
+// A Nice Title Uses The Correct Case
+```
+
+### <a id="ucfirst"></a>Str::ucfirst()
+```php
+$string = Str::ucfirst('foo bar');
+
+// Foo bar
+```
+
+### <a id="upper"></a>Str::upper()
+```php
+$string = Str::upper('chris');
+
+// CHRIS
+```
+
+### <a id="uuid"></a>Str::uuid()
+```php
+$uuid = Str::uuid();
+
+// 0b1a9d6f-e2c7-489d-93f9-331108ebc314
+```
+
+### <a id="words"></a>Str::words()
+```php
+return Str::words('Perfectly balanced, as all things should be.', 3, ' >>>');
 
 // Perfectly balanced, as >>>
 ```
