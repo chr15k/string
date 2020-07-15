@@ -23,40 +23,30 @@ composer require chr15k/string
 
 ## Usage
 ```php
-echo s('Chris')->upper();
-// outputs: "CHRIS"
+echo s('Chris')->upper(); // outputs: "CHRIS"
 
-echo s('Chris')->lower();
-// outputs: "chris"
+echo s('Chris')->lower(); // outputs: "chris"
 
-echo s('Chris')->possessive();
-// outputs: "Chris'"
+echo s('Chris')->possessive(); // outputs: "Chris'"
 
-echo s('Chris')->exactly('Chris');
-// outputs: true
+echo s('Chris')->exactly('Chris'); // outputs: true
 
-echo s('Chris')->isEmtpy();
-// outputs: false
+echo s('Chris')->isEmtpy(); // outputs: false
 
-echo s(' ')->trim()->isEmpty();
-// outputs: true
+echo s(' ')->trim()->isEmpty(); // outputs: true
 
 echo s('Child')
     ->plural()
     ->possessive()
-    ->append(' Book');
-// outputs: "Children's Book"
+    ->append(' Book'); // outputs: "Children's Book"
 
 echo s(' hello_world')
     ->trim()
-    ->camel();
-// outputs: "helloWorld"
+    ->camel(); // outputs: "helloWorld"
 
-echo s('Hello World')->studly();
-// outputs: "HelloWorld"
+echo s('Hello World')->studly(); // outputs: "HelloWorld"
 
-echo s('Hello World')->slug('-');
-// outputs: "hello-world"
+echo s('Hello World')->slug('-'); // outputs: "hello-world"
 ```
 
 ## Docs
