@@ -29,7 +29,7 @@ echo s('Chris')->lower(); // outputs: "chris"
 
 echo s('Chris')->exactly('Chris'); // outputs: true
 
-echo s('Chris')->isEmtpy(); // outputs: false
+echo s('Chris')->isEmpty(); // outputs: false
 
 echo s(' ')->trim()->isEmpty(); // outputs: true
 
