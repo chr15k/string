@@ -4,7 +4,9 @@
     "type": "library",
     "keywords": [
         "chr15k",
-        "string"
+        "string",
+        "helpers",
+        "php"
     ],
     "homepage": "https://github.com/chr15k/string",
     "license": "MIT",
@@ -28,7 +30,7 @@
             "Chr15k\\String\\": "src/"
         },
         "files": [
-            "src/helpers.php"
+            "src/str_functions.php"
         ]
     },
     "autoload-dev": {
