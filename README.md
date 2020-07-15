@@ -23,7 +23,7 @@ composer require chr15k/string
 
 ## Usage
 <details>
-  <summary>String methods</summary>
+  <summary>String Methods</summary>
 
 - [after](#after)
 - [afterLast](#afterLast)
@@ -342,8 +342,9 @@ return Str::words('Perfectly balanced, as all things should be.', 3, ' >>>');
 </details>
 
 <details>
-  <summary>String chaining</summary>
-You can also chain multiple string operations together using the `s()` helper.
+  <summary>String Method Chaining</summary>
+
+- You can also chain multiple string operations together using the `s()` helper.
 
 - [after](#after2)
 - [afterLast](#afterLast2)
