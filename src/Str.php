@@ -291,7 +291,7 @@ class Str
 
     /**
      * Truncates the given string at the specified length.
-     * 
+     *
      * @param  string  $value
      * @param  integer $limit
      * @param  string  $end
@@ -400,17 +400,17 @@ class Str
 
         $value = trim($value);
 
+        if (static::endsWith($value, ["'", "'s"])) {
+            return $value;
+        }
+
         $edgeCases = ['it'];
 
         if (in_array($value, $edgeCases)) {
             return sprintf("%s%s", $value, 's');
         }
 
-        return sprintf(
-            "%s'%s",
-            $value,
-            ($value[strlen($value) - 1] !== 's' ? 's' : '')
-        );
+        return sprintf("%s'%s", $value, ($value[strlen($value) - 1] !== 's' ? 's' : ''));
     }
 
     /**
@@ -552,7 +552,7 @@ class Str
 
     /**
      * Converts given string to snake case.
-     * 
+     *
      * @param  string $value
      * @param  string $delimeter
      * @return string
@@ -599,7 +599,7 @@ class Str
 
     /**
      * Converts given string to studly case.
-     * 
+     *
      * @param  string
      * @return string
      */

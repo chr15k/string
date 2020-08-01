@@ -6,7 +6,7 @@ use Chr15k\String\Str;
 use Ramsey\Uuid\UuidInterface;
 use PHPUnit\Framework\TestCase;
 
-class HelpersTest extends TestCase
+class StrTest extends TestCase
 {
     public function testStringPossessive()
     {
@@ -15,6 +15,7 @@ class HelpersTest extends TestCase
         $this->assertSame("its", Str::possessive('it'));
         $this->assertSame("Erin's", Str::possessive('Erin'));
         $this->assertSame("James'", Str::possessive('James'));
+        $this->assertSame("Chris'", Str::possessive("Chris'"));
     }
 
 	public function testStringCanBeLimitedByWords()
