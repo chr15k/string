@@ -4,12 +4,6 @@
 
 This package provides useful helpers for working with strings in PHP, including UUID and ASCII support.
 
-This library has 3 dependencies:
-
-- [doctrine/inflector](https://github.com/doctrine/inflector) (Plural/Singular word support)
-- [ramsey/uuid](https://github.com/ramsey/uuid) (UUID generation support)
-- [voku/portable-ascii](https://github.com/voku/portable-ascii) (ASCII support)
-
 Based on ...
 
 - Laravel's string helper work (https://github.com/laravel/framework)
@@ -23,25 +17,23 @@ composer require chr15k/string
 
 ## Usage
 ```php
-echo s('Chris')->upper(); // outputs: "CHRIS"
+return s('Child')
+    ->plural()
+    ->possessive()
+    ->append(' Book'); // outputs: "Children's Book"
 
-echo s('Chris')->lower(); // outputs: "chris"
+return s('Child')
+    ->plural(1); // (pass a count) outputs: "Child"
 
-echo s('Chris')->exactly('Chris'); // outputs: true
+return s(' hello_world')
+    ->trim()
+    ->camel(); // outputs: "helloWorld"
 
-echo s('Chris')->isEmpty(); // outputs: false
+return s('Hello World')
+    ->studly(); // outputs: "HelloWorld"
 
-echo s(' ')->trim()->isEmpty(); // outputs: true
-
-echo s('Chris')->possessive(); // outputs: "Chris'"
-
-echo s('Child')->plural()->possessive()->append(' Book'); // outputs: "Children's Book"
-
-echo s(' hello_world')->trim()->camel(); // outputs: "helloWorld"
-
-echo s('Hello World')->studly(); // outputs: "HelloWorld"
-
-echo s('Hello World')->slug('-'); // outputs: "hello-world"
+return s('Hello World')
+    ->slug('-'); // outputs: "hello-world"
 ```
 
 ## Docs
@@ -53,7 +45,7 @@ echo s('Hello World')->slug('-'); // outputs: "hello-world"
 ```
 Chain multiple string operations together using the s() helper.
 ```
- 
+
 - [after](#after2)
 - [afterLast](#afterLast2)
 - [append](#append2)
